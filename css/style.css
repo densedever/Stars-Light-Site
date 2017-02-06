@@ -1,0 +1,31 @@
+.navbar {
+	opacity:0.8;
+	margin-top:0px;
+	box-shadow:#000000 0px 0px 4px;	
+}
+	
+.intro-block {
+	margin-top:0px;
+	background: url(../images/177.jpg);
+	background-size:cover;
+	padding: 100px 20px 200px;
+}
+.marketing {
+	background: url(../images/text_back.jpg);
+	padding: 50px 20px 100px;
+	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+	font-size:16px;
+	color:#FFFFFF;
+}
+.foot_back {
+	background-color:#0A0A0A;
+	padding:50px 20px 40px;
+}
+.upload_quote {
+	background: url('../images/button_on_top.jpg') repeat;
+	padding: 100px 40px 100px;
+}
+.margin-custom {
+	margin-right:50px;
+	
+}

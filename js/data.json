@@ -1,0 +1,12 @@
+var my_id {
+
+	"Name"        : "Abdul Mujeeb",
+	"Father_name" : "H/Cap Muhammad Ishaq",
+	"Siblings"    : 4,
+	"Portfolio"   : [
+		"JQuery",
+		"Ajax",
+		"JavaScript",
+		"C++",
+	]
+};
