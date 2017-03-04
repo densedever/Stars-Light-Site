@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 	<html>
 	<head>
+		<meta charset="utf-8" />
 		<title>Health Wellness Site</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css" >
 		<link rel="stylesheet" href="css/style.css">
@@ -29,25 +30,52 @@
 		</nav>
 
 <div class="upload_quote">
-	<button type="button" class="btn btn-lg btn-primary center-block"> Submit a Quote ? </button>
+	<button type="button" class="btn btn-info btn-lg center-block" data-toggle="modal" data-target="#myModal">Submit a Quote</button>
 	<div id="submit"></div>
 </div>
-
-<div class="container">
+<br />
+<div class="container back-check">
 	<div class="row">
-		<div class="col-sm-10 col-xs-offset-4">
+		<div class="col-sm-10 text-center">
 			<?php
-				
+				$fh = fopen('Quotes.txt', 'r');
+				while ($line = fgets($fh)) {
+					echo "<p> {$line} </p>";
+					echo "<hr />";
+				}
+			fclose($fh);
 			?>
 		</div>
 	</div>
 </div>
-	
-	
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+    	<div class="modal-body">
+	      <form method="post">
+	      		<input type="text" name="quote" placeholder="Enter Quote here" size="60" />
+	      		<button name="submit">Submit</button>
+	      </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
 	<script src="js/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/script.js"></script>
+	<?php
+
+		if (isset($_POST['submit'])) {
+			$content = $_POST['quote'];
+			file_put_contents('Quotes.txt', $content.PHP_EOL, FILE_APPEND | LOCK_EX);
+		}
+
+	?>
 
 	</body>
 	</html>
